@@ -23,6 +23,23 @@ p.mainTagLine {
     font-weight: 400;
 }
 
+div.question {
+    background-color: #ffaf198f;
+    border: 2px solid #111111;
+    border-radius: 5px;
+}
+
+input.radioCircle:checked + span:after,
+input.radioCircle.with-gap:checked + span:before,
+input.radioCircle.with-gap:checked + span:after {
+  border: 2px solid #9014ca;
+}
+
+input.radioCircle:checked + span:after,
+input.radioCircle.with-gap:checked + span:after {
+  background-color: #9014ca;
+}
+
 a.takeQuiz {
     background-color: #ebebeb;
     border: 4px solid #111111;
