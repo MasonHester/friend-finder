@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'app/public')));
 
-htmlRoutes(app);
 apiRoutes(app);
+htmlRoutes(app);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
