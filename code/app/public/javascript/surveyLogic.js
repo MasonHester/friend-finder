@@ -32,7 +32,7 @@ $(document).ready(() => {
             missingDisplayDiv.append($questionDiv);
         });
 
-        $("#incompleteQuizModal").modal("open");
+        $("div#incompleteQuizModal").modal("open");
     }
 
     const reduceArray = (arrayName) => {
@@ -41,14 +41,28 @@ $(document).ready(() => {
         }, 0)
     }
 
-    const compareAnswers = (userInfo) => {
+    const compareAnswers = (userInfo, totalQuestions) => {
         $.get("/api/v1/friends").then((data) => {
-            console.log(data);
-            const reducedUserInfo = reduceScore()
-        })
-    }
+            const reducedUserScore = reduceArray(userInfo.scores);
+            let currentMatch;
+            let currentScoreDifference = totalQuestions * 5;
 
-    const checkAnswers = (event) => {
+            data.testUsers.forEach((friend) => {
+                const reducedFriendScore =  reduceArray(friend.scores);
+                const scoreDifference = Math.abs(reducedUserScore - reducedFriendScore);
+                if(scoreDifference < currentScoreDifference) {
+                    currentMatch = friend;
+                    currentScoreDifference = scoreDifference;
+                };
+            });
+
+            $("span.matchName").text(currentMatch.name);
+            $("div.matchDisplayDiv").append($("<img>").attr("src", currentMatch.img));
+            $("div#matchDisplay").modal("open");
+        });
+    };
+
+    const getUserInfo = (event) => {
         event.preventDefault();
 
         userInfo = {
@@ -76,7 +90,7 @@ $(document).ready(() => {
 
             switch (objectLength) {
                 case 0:
-                    compareAnswers(userInfo);
+                    compareAnswers(userInfo, data.testQuestions.length);
                     break;
                 default:
                     incompleteQuiz(unansweredQuestions, objectLength);
@@ -84,6 +98,6 @@ $(document).ready(() => {
         });
     }
 
-    $("form").submit(checkAnswers);
+    $("form").submit(getUserInfo);
     $("input#userName").keyup(checkInput);
 });
