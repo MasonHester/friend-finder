@@ -1,5 +1,5 @@
 const users = {
-    userSet1: [
+    testUsers: [
         {
             name: "Friend1",
             img: "",
@@ -54,6 +54,13 @@ const users = {
             name: "Friend11",
             img: "",
             scores: [5,5,5,5,5,5,5,5,5,5]
+        },
+        {
+            name: "Friend12",
+            img: "",
+            scores: [5,5,5,5,5,5,5,5,5,5]
         }
     ]
 }
+
+module.exports = users;

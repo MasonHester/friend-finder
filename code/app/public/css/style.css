@@ -67,6 +67,59 @@ p.quizDescription {
     color: #111111;
 }
 
+input.textInput, input.urlInput {
+    color: #111111 !important;
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+input.textInput:focus, input.urlInput:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+label.inputLabel, label.inputLabel:focus label.active{
+    color: #111111 !important
+}
+
+/* Placeholder texts */
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #111111;
+    font-style: italic;
+    font-size: 12px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #111111;
+   opacity:  1;
+   font-style: italic;
+   font-size: 12px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #111111;
+   opacity:  1;
+   font-style: italic;
+   font-size: 12px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #111111;
+   font-style: italic;
+   font-size: 12px;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #111111;
+   font-style: italic;
+   font-size: 12px;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #111111;
+   font-style: italic;
+   font-size: 12px;
+}
+
+/* Helper styles (spacing, breaks, etc) */
+
 .italicText {
     font-style: italic;
 }

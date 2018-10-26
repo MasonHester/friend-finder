@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,28 @@
 </head>
 
 <body>
+    <div id="incompleteQuizModal" class="modal">
+        <div class="modal-content">
+            <h4>Whoops!</h4>
+            <p>It looks like you missed <span class="amountDescriber"></span></p>
+            <div class="missingDisplayDiv"></div>
+            <p>Answer <span class="amountDescriber"></span> before you submit your quiz</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
     <div class="spacer150px hide-on-small-only"></div>
 
     <div class="spacer100px hide-on-med-and-up"></div>
@@ -45,18 +68,50 @@
                 <hr class="largeBreak">
 
                 <p class="center-align italicText mainTagLine">
-                    This quiz is composed of 10 questions. Answer each one honestly and you will be matched with the person most like you!
+                    This quiz is composed of 10 questions. Answer each one honestly and you will be matched with the
+                    person most like you!
                 </p>
 
                 <p class="center-align italicText mainTagLine">
                     The answers are on a scale of 1 (Completely Disagree) to 5 (Completely Agree)
                 </p>
 
-                <div class="spacer50px hide-on-small-only"></div>
+                <div class="spacer25px"></div>
 
-                <div class="spacer25px hide-on-med-and-up"></div>
+                <form class="quiz">
+                    <p class="center-align italicText mainTagLine">
+                        Please enter your name and a link to your picture so friends can match with you
+                    </p>
 
-                <form class="quiz"></form>
+                    <div class="row">
+                        <div class="col s8 offset-s2 question center-align">
+                            <div class="row">
+                                <div class="col s12 m3">
+                                    <p>Name</p>
+                                </div>
+    
+                                <div class="col s12 m9 inputField">
+                                    <input placeholder="Name" class="textInput required" id="userName" type="text">
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col s12 m3">
+                                    <p>Image</p>
+                                </div>
+    
+                                <div class="col s12 m9 inputField">
+                                    <input placeholder="Image URL" class="urlInput validate" id="userImage" type="url">
+                                    <label for="userImage" class="inputLabel" data-error="That isn't a url link" data-success="url works out">If no image is provided, you will be assigned a random one</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="spacer50px hide-on-small-only"></div>
+
+                    <div class="spacer25px hide-on-med-and-up"></div>
+                </form>
 
                 <div class="spacer100px hide-on-small-only"></div>
 
@@ -65,12 +120,15 @@
         </div>
     </div>
     
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Javascript -->
+    <script src="../javascript/materializeInit.js"></script>
     <script src="../javascript/surveyLoader.js"></script>
     <script src="../javascript/surveyLogic.js"></script>
 </body>
+
 </html>

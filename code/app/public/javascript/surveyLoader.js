@@ -49,7 +49,7 @@ $(document).ready(() => {
         $.get("/api/v1/questions").then((data) => {
             const $quiz = $("form.quiz");
             const $submitDiv = $("<div>").addClass("center-align");
-            const $submit = $("<input>").addClass("center-align").attr("type", "submit").val("Submit");
+            const $submit = $("<input>").addClass("center-align submitQuiz").attr("type", "submit").attr("disabled", "disabled").val("Submit");
 
             $submitDiv.append($submit);
     
