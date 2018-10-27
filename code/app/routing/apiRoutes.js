@@ -8,5 +8,17 @@ module.exports = (app) => {
 
     app.get("/api/v1/friends", (req, res) => {
         res.json(users);
-    })
+    });
+
+    app.post("/api/v1/friends", (req, res) => {
+        const input = req.body
+        if (Object.keys(input).length > 0) {
+            console.log("in if")
+            users.testUsers.push(input)
+        }
+        else {
+            console.log("in else")
+        }
+        console.log(users);
+    });
 }

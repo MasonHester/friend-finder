@@ -11,8 +11,6 @@ $(document).ready(() => {
     };
     
     const incompleteQuiz = (missedQuestions, objectLength) => {
-        console.log(missedQuestions);
-
         const describerSpan = $("span.amountDescriber");
         const missingDisplayDiv = $("div.missingDisplayDiv")
 
@@ -37,7 +35,7 @@ $(document).ready(() => {
 
     const reduceArray = (arrayName) => {
         return arrayName.reduce((accumulator, currentValue) => {
-            return accumulator + currentValue
+            return parseInt(accumulator) + parseInt(currentValue)
         }, 0)
     }
 
@@ -57,8 +55,10 @@ $(document).ready(() => {
             });
 
             $("span.matchName").text(currentMatch.name);
-            $("div.matchDisplayDiv").append($("<img>").attr("src", currentMatch.img));
+            $("div.matchDisplayDiv").append($("<img>").addClass("friendImage").attr("src", currentMatch.img));
             $("div#matchDisplay").modal("open");
+
+            $.post("/api/v1/friends", userInfo);
         });
     };
 
@@ -71,7 +71,7 @@ $(document).ready(() => {
             scores: []
         }
 
-        console.log($("input#userName").val())
+        userInfo.name = $("input#userName").val()
 
         $.get("/api/v1/questions").then((data) => {
             const unansweredQuestions = {};

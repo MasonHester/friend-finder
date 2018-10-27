@@ -82,6 +82,11 @@ label.inputLabel, label.inputLabel:focus label.active{
     color: #111111 !important
 }
 
+img.friendImage {
+    height: 200px;
+    width: 200px;
+}
+
 /* Placeholder texts */
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
