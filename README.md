@@ -1,63 +1,65 @@
-# Ubuntu Vagrant Shell
-## Simple foundation for App development
+# Friend Finder
 
-### Requirements:
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](https://www.vagrantup.com/downloads.html)
+## Contents
+- [Link to Live Site](#link-to-live-site)
+- [Requirements](#requirements)
+  - [Live Version](#live-version)
+  - [Local Version](#local-version)
+- [Description](#description)
+- [Tools Used](#tools-used)
+- [How to Use](#how-to-use)
+  - [Live Setup](#live-setup)
+  - [Local Setup](#local-setup)
+    - [Using the VM Provided](#using-the-vm-provided)
+    - [Not Using the VM Provided](#not-using-the-vm-provided)
+- [Resources](#resources)
 
-## Usage
-This is intended to be a simple Ubuntu 16.04LTS server with Node 8 installed during provisioning. This can easily be extended to include other services like MySql, Mongo, React CLI, etc.
+## Link to Live Site
+You can visit the site live [here](https://friend-finder-mason-h.herokuapp.com/ "Live Site")
 
-### Spin up the VM
-After cloning the repository, change into the project directory (where `vagrantfile` is located) and issue the following command:
+## Requirements
+### Live Version
+- None, the app is deployed to heroku
+### Local Version
+- If you want to run the app locally
+  - [Nodejs](https://nodejs.org/en/download/ "Install Node")
 
-`vagrant up`
+## Description
+This application is used to make use of an express server deployed on heroku.
 
-> Note: The first boot of your new VM will take a while, especially if this is ALSO the first time you're using the "box" that's configured in `vagrantfile` since it will need to be downloaded. After that, the provisioner will run a lot of scripts. **Don't panic if you see red** during the provisioning.
+## Tools used
+- Javascript
+- Jquery
+- [NPM](https://www.npmjs.com/ "NPM's website")
+  - [body-parser](https://www.npmjs.com/package/body-parser "Body-Parser's NPM page")
+  - [express](https://www.npmjs.com/package/express "Express' NPM page")
+  - [path](https://www.npmjs.com/package/path "Path's NPM page")
+- [Node](https://nodejs.org/en/ "Node's website")
+- [Heroku](https://dashboard.heroku.com "Herokus website")
 
-### Access the VM's terminal console
-After the VM is finished booting and is provisioned, you can access the VM terminal with:
+## How to Use
+### Live Setup
+You can visit the site live [here](https://friend-finder-mason-h.herokuapp.com/ "Live Site")
 
-`vagrant ssh`
+### Local Setup
+#### Using the VM Provided
+1. If you are new to using VM's check the Ubuntu Vagrant Shell's README found [here](https://github.com/switch120/ubuntu-vagrant-shell)
+2. Clone this repo onto your computer
+3. Navigate to the VM in your CLI and run `vagrant up`
+4. Run `vagrant ssh`
+5. Navigate into the code folder
+6. Run `npm install`
+7. Navigate into the app folder
+8. Run `node server.js`
 
-### File Mapping
+#### Not Using the VM Provided
+1. Clone this repo onto your computer
+2. Move the contents of the code folder, the package.json file, and the package-lock.json file to your preferred VM or locally
+3. Install the dependencies
+4. run `server.js`
 
-The local `/code` folder in this project is automatically mapped to `/var/code` in the VM by default.
-
-### Getting out of the VM
-To exit the VM console, like any other SSH session, use the `exit` command.
-
-### Turning VM off
-`vagrant halt`
-
-### Completely wipe the VM and start over 
-`vagrant destroy` -> `vagrant up`
-
-> Note: mounted files are unaffected by this operation)
-
-## Windows & Virtualization
-> **Important**: Windows machines will need to enable Virtualization if it has been disabled in the BIOS.
-
-Virtualization must be enabled for Vagrant, and some Windows machines will disable this by default. To check this, open Task Manager then click Performance. Near bottom right Virtualization should be enabled. If it is not, this will need to be enabled in the BIOS before Vagrant will function correctly.
-
-> **Note on NPM** - Windows users may need to use the `--no-bin-links` option of npm when installing/updating modules since Windows has some default permission settings that cause errors when creating symlinks. Running **Gitbash** explicitly as an Adminstrator may also help (shift-right click, "Run as Administrator"), but if not you can also open the Group Policy Editor (gpedit.msc) and enabled symlinks for all users under Computer Config -> Windows Settings -> Security Settings -> Local Policies -> User Rights Assignment -> Create Symbolic Links
-
-## Custom Host Name
-In order to access your VM outside the console, like in a web browser or database management tool, it's easiest to give your VM's `ip address` a **host entry** on your development machine.
-
-Host Format:
-
-`000.000.000.000 hostname.local`
-
-Where the first part is a valid local IP Address, and the second is the name of the host. `.local` is common for development.
-
-Add this line to your **hosts** file. Like many things, this depends on your Operating System
-
-* **Mac / Linux** :  sudo nano /etc/hosts
-* **Windows** : Open C:\Windows\System32\Drivers\etc\hosts in Text Editor (**with Admin permission**!)
-
-You can test your Custom Host name (local) resolution with this command in a terminal:
-
-`$ ping hostname.local`
-
-Expected result is that the `hostname.local` resolves to the IP address you put in the hosts file. It does not matter if it times out, just that it resolves to the correct IP.
+## Resources
+[googlefonts](https://fonts.google.com/ "GoogleFont's webpage")
+[materialize](https://materializecss.com/ "Materialize's webpage")
+[shareicon](https://www.shareicon.net/ "Shareicon's webpage")
+[svgbackgrounds](https://www.svgbackgrounds.com "SVGBackground's webpage")
