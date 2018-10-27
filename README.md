@@ -60,6 +60,9 @@ You can visit the site live [here](https://friend-finder-mason-h.herokuapp.com/ 
 
 ## Resources
 [googlefonts](https://fonts.google.com/ "GoogleFont's webpage")
+
 [materialize](https://materializecss.com/ "Materialize's webpage")
+
 [shareicon](https://www.shareicon.net/ "Shareicon's webpage")
+
 [svgbackgrounds](https://www.svgbackgrounds.com "SVGBackground's webpage")
