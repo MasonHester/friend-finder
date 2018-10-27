@@ -1,5 +1,7 @@
 # Friend Finder
 
+![Friend Finder](./code/assets/images/friend-finder.png)
+
 ## Contents
 - [Link to Live Site](#link-to-live-site)
 - [Requirements](#requirements)
